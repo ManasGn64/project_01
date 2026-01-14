@@ -1,60 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project_1(My portfolio ver 0)</title>
-    <link rel="stylesheet" href="pr1.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sashi Dhar | Portfolio</title>
+  <link rel="stylesheet" href="pr1.css" />
 </head>
+
 <body>
-    <header>
-        <h1>Hello I'm a web developer</h1>
-        <h3>This is my portfolio</h3>    
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <section>
-        <h3>About me</h3>
-        <p>This is my first step into the web developement. I'm creating a portfolio website as my first project. </p>
+  <header class="site-header">
+    <div class="container">
+      <h1>Hello, I’m <span class="accent">Sashi Dhar</span></h1>
+      <p class="subtitle">A beginner web developer building cool things step by step.</p>
+
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section id="about" class="card">
+      <h2>About Me</h2>
+      <p>
+        This is my first step into web development. I’m creating a portfolio website as my first project.
+        I’m learning every day and improving with each version.
+      </p>
     </section>
 
-    <section>
+    <section id="skills" class="card">
+      <div class="section-head">
         <h2>My Skills</h2>
-        <ul id="skillsList">
-            <li>HTML</li>
-            <li>CSS (learning)</li>
-            <li>JavaScript(learning)</li>
-        </ul>
+        <button class="btn" id="toggleSkills" aria-expanded="true" aria-controls="skillsList">
+          Hide Skills
+        </button>
+      </div>
 
-
-        <button id="toggleSkills">Hide Skills</button>
+      <ul id="skillsList" class="pill-list">
+        <li>HTML</li>
+        <li>CSS (learning)</li>
+        <li>JavaScript (learning)</li>
+      </ul>
     </section>
 
-
-    <section>
+    <section id="projects" class="card">
+      <div class="section-head">
         <h2>My Projects</h2>
-        <ul id="projectsList">
-            <li>Portfolio</li>
-            <li>Game (under developement)</li>
-            
-        </ul>
+        <button class="btn" id="toggleProjects" aria-expanded="true" aria-controls="projectsList">
+          Hide Projects
+        </button>
+      </div>
 
+      <ul id="projectsList" class="list">
+        <li><strong>Portfolio</strong> — Version 0 (this page)</li>
+        <li><strong>Game</strong> — Under development</li>
+      </ul>
 
-        <button id="toggleProjects">Hide Projects</button>
+      <p class="muted">More projects coming soon…</p>
     </section>
 
-    <section>
-        <p>Coming soon!!!.......</p>
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>
+        Email:
+        <a href="mailto:next.sashi@gmail.com">next.sashi@gmail.com</a>
+      </p>
     </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Sashi Dhar. Built with HTML, CSS, and JS.</p>
+    </div>
+  </footer>
 
-    <footer>
-        <P>Contact :- next.sashi@gmail.com<br> Sashi Dhar </P>
-    </footer>
-
-
-
-
-
-    <script src="pr1.js"></script>
+  <script src="pr1.js"></script>
 </body>
 </html>
