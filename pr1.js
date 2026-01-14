@@ -1,19 +1,24 @@
-// alert("this is my first project")
+function setupToggle(buttonId, listId) {
+  const btn = document.getElementById(buttonId);
+  const list = document.getElementById(listId);
 
-function setupToggle(buttonId, listId, showText, hideText) {
-    const button = document.getElementById(buttonId);
-    const list = document.getElementById(listId);
+  btn.addEventListener("click", () => {
+    const isHidden = list.classList.toggle("hidden");
 
-    button.addEventListener("click", function() {
-        list.classList.toggle("hidden");
+    btn.textContent = isHidden ? "Show" : "Hide";
+    btn.textContent += buttonId === "toggleSkills" ? " Skills" : " Projects";
 
-        if(list.classList.contains("hidden")) {
-            button.textContent =showText ;
-        } else {
-            button.textContent =hideText;
-        }
-    });
+    btn.setAttribute("aria-expanded", (!isHidden).toString());
+  });
 }
 
-setupToggle("toggleSkills","skillsList","Show Skill","Hide Skill");
-setupToggle("toggleProjects","projectsList","Show Projects","Hide Projects");
+// add a small CSS helper class with JS (or place it in CSS if you want)
+const style = document.createElement("style");
+style.textContent = `.hidden{ display:none !important; }`;
+document.head.appendChild(style);
+
+setupToggle("toggleSkills", "skillsList");
+setupToggle("toggleProjects", "projectsList");
+
+// footer year
+document.getElementById("year").textContent = new Date().getFullYear();
